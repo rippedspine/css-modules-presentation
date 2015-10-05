@@ -1,4 +1,3 @@
 .root {
-  height: 100%;
-  composes: sans-serif from 'tachyons.css';
+  composes: bg-lightest-blue black-80 sans-serif from 'tachyons.css';
 }

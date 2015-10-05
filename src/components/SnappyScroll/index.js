@@ -12,6 +12,7 @@ var i = 0
 var scrollTop = 0
 var start = 0
 var distance = 0
+var total = 0
 
 const easeInOutCubic = (pos) => {
   return (pos /= 0.5) < 1 ? 0.5 * pow(pos, 3) : 0.5 * (pow((pos - 2), 3) + 2)
@@ -27,6 +28,7 @@ export default class SnappyScroll extends Component {
   }
 
   componentDidMount() {
+    total = this.props.children.length
     window.addEventListener('keyup', this.handleKeyUp)
     window.addEventListener('mousewheel', this.handleScroll)
   }
@@ -38,16 +40,16 @@ export default class SnappyScroll extends Component {
   }
 
   goToNext() {
-    const index = this.refs[activeIndex + 1] ? activeIndex + 1 : activeIndex
-
-    activeIndex = index
+    if (activeIndex < total - 1) {
+      activeIndex++
+    }
     this.setupScroll()
   }
 
   goToPrev() {
-    const index = this.refs[activeIndex - 1] ? activeIndex - 1 : activeIndex
-
-    activeIndex = index
+    if (activeIndex > 0) {
+      activeIndex--
+    }
     this.setupScroll() 
   }
 

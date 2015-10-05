@@ -1,0 +1,15 @@
+.root {
+  composes: card from 'styles/cards.css';
+  max-width: 20rem;
+  margin: auto;
+  padding: 2rem;
+}
+
+.image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.description {
+  composes: mbn from 'tachyons.css';
+}

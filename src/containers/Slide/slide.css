@@ -1,63 +1,33 @@
-.root {
+.normal {
+  composes: pvl cf from 'tachyons.css';
+}
+
+.inner {
+  text-align: center;  
+  max-width: 1000px;
+  margin: auto;
+  width: 80%;  
+}
+
+.dashed {
+  composes: normal;
+  > div {
+    max-width: calc(1000px + 5rem);
+    border: 2px dashed rgba(255,255,255,0.5);
+    border-radius: 5px;
+    padding: 0 2.5rem 2rem;
+  }
+}
+
+.hero {
   min-height: 100vh;
   position: relative;
 }
 
-.inner {
+.heroInner {
+  composes: inner;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -65%);
-
-  margin: auto;
-  width: 80%;
-  max-width: 600px;
-  text-align: center;
 }
-
-/* font color */
-.light-bg { composes: black-80 from 'tachyons.css'; }
-.dark-bg { composes: white-90 from 'tachyons.css'; }
-
-/* skins */
-.white { composes: bg-black-05 from 'tachyons.css'; composes: light-bg root; }
-.blue { composes: bg-blue from 'tachyons.css'; composes: dark-bg root; }
-.light-blue { composes: bg-light-blue from 'tachyons.css'; composes: dark-bg root; }
-.lightest-blue { composes: bg-lightest-blue from 'tachyons.css'; composes: light-bg root; }
-.dark-blue { composes: bg-dark-blue from 'tachyons.css'; composes: dark-bg root; }
-.darkest-blue { composes: bg-darkest-blue from 'tachyons.css'; composes: dark-bg root; }
-.yellow { composes: bg-yellow from 'tachyons.css'; composes: dark-bg root; }
-.light-yellow { composes: bg-light-yellow from 'tachyons.css'; composes: light-bg root; }
-.lightest-yellow { composes: bg-lightest-yellow from 'tachyons.css'; composes: light-bg root; }
-.dark-yellow { composes: bg-dark-yellow from 'tachyons.css'; composes: dark-bg root; }
-.darkest-yellow { composes: bg-darkest-yellow from 'tachyons.css'; composes: dark-bg root; }
-.orange { composes: bg-orange from 'tachyons.css'; composes: dark-bg root; }
-.light-orange { composes: bg-light-orange from 'tachyons.css'; composes: dark-bg root; }
-.lightest-orange { composes: bg-lightest-orange from 'tachyons.css'; composes: dark-bg root; }
-.dark-orange { composes: bg-dark-orange from 'tachyons.css'; composes: dark-bg root; }
-.darkest-orange { composes: bg-darkest-orange from 'tachyons.css'; composes: dark-bg root; }
-.red { composes: bg-red from 'tachyons.css'; composes: dark-bg root; }
-.light-red { composes: bg-light-red from 'tachyons.css'; composes: dark-bg root; }
-.lightest-red { composes: bg-lightest-red from 'tachyons.css'; composes: dark-bg root; }
-.dark-red { composes: bg-dark-red from 'tachyons.css'; composes: dark-bg root; }
-.darkest-red { composes: bg-darkest-red from 'tachyons.css'; composes: dark-bg root; }
-.teal { composes: bg-teal from 'tachyons.css'; composes: dark-bg root; }
-.light-teal { composes: bg-light-teal from 'tachyons.css'; composes: dark-bg root; }
-.lightest-teal { composes: bg-lightest-teal from 'tachyons.css'; composes: dark-bg root; }
-.dark-teal { composes: bg-dark-teal from 'tachyons.css'; composes: dark-bg root; }
-.darkest-teal { composes: bg-darkest-teal from 'tachyons.css'; composes: dark-bg root; }
-.green { composes: bg-green from 'tachyons.css'; composes: dark-bg root; }
-.light-green { composes: bg-light-green from 'tachyons.css'; composes: dark-bg root; }
-.lightest-green { composes: bg-lightest-green from 'tachyons.css'; composes: light-bg root; }
-.dark-green { composes: bg-dark-green from 'tachyons.css'; composes: dark-bg root; }
-.darkest-green { composes: bg-darkest-green from 'tachyons.css'; composes: dark-bg root; }
-.pink { composes: bg-pink from 'tachyons.css'; composes: dark-bg root; }
-.light-pink { composes: bg-light-pink from 'tachyons.css'; composes: dark-bg root; }
-.lightest-pink { composes: bg-lightest-pink from 'tachyons.css'; composes: light-bg root; }
-.dark-pink { composes: bg-dark-pink from 'tachyons.css'; composes: dark-bg root; }
-.darkest-pink { composes: bg-darkest-pink from 'tachyons.css'; composes: dark-bg root; }
-.purple { composes: bg-purple from 'tachyons.css'; composes: dark-bg root; }
-.light-purple { composes: bg-light-purple from 'tachyons.css'; composes: dark-bg root; }
-.lightest-purple { composes: bg-lightest-purple from 'tachyons.css'; composes: light-bg root; }
-.dark-purple { composes: bg-dark-purple from 'tachyons.css'; composes: dark-bg root; }
-.darkest-purple { composes: bg-darkest-purple from 'tachyons.css'; composes: dark-bg root; }

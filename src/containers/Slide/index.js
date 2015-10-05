@@ -18,13 +18,15 @@ export default class Slide extends Component {
   }
 
   static defaultProps = {
-    color: 'white'
+    style: 'normal'
   }
 
   render() {
+    const { style } = this.props;
+
     return (
-      <div className={styles[this.props.color]}>
-        <div className={styles.inner}>
+      <div className={styles[style]}>
+        <div className={styles[style === 'hero' ? 'heroInner': 'inner']}>
           {this.props.children}
         </div>
       </div>

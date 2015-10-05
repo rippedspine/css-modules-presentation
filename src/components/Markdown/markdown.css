@@ -1,16 +1,10 @@
 .common {
   composes: mvm f3 from 'tachyons.css';
+  width: 100%;
+  margin: auto;
 }
 
 .text {
   composes: common;
-
-  blockquote {}
-  p {}
-}
-
-.code {
-  composes: common;
-  composes: tl from 'tachyons.css';
-  composes: card from 'styles/cards.css';
+  max-width: 800px;
 }

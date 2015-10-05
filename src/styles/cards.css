@@ -1,4 +1,4 @@
 .card {
-  composes: phl pvs bg-white-80 black-80 br2 from 'tachyons.css';
+  composes: bg-white-80 black-80 phl pvs br2 from 'tachyons.css';
   composes: bs1 from 'styles/box-shadow.css';
 }

@@ -17,6 +17,11 @@ module.exports = {
       allChunks: true
     })
   ],
+
+  resolve: {
+    modulesDirectories: ["src", "node_modules", "src/libs", "src/styles", "node_modules/tachyons/css"]
+  },
+
   module: {
     loaders: [{
       test: /\.js$/,
@@ -24,11 +29,14 @@ module.exports = {
       include: path.join(__dirname, 'src')
     }, {
       test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', [
-        'css-loader?modules',
-        'importLoaders=1',
-        'localIdentName=[name]_[local]_[hash:base64:5]'
-      ].join('&'))
+      loader: ExtractTextPlugin.extract(
+        'style', 
+        'css?modules&importLoaders=1&localIdentName=[name]_[local]_[hash:base64:5]!postcss'
+      )
     }]
+  },
+
+  postcss: function() {
+    return [require('precss')]
   }
 }

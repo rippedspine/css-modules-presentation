@@ -24,7 +24,7 @@ module.exports = {
   ],
 
   resolve: {
-    modulesDirectories: ["src", "node_modules", "node_modules/tachyons/css", "src/libs", "src/styles"]
+    modulesDirectories: ["src", "node_modules", "src/libs", "src/styles", "node_modules/tachyons/css"]
   },
 
   module: {
@@ -39,7 +39,7 @@ module.exports = {
   },
 
   postcss: function() {
-    return [require('autoprefixer'), require('precss')]
+    return [require('precss')]
   }
 }
 
