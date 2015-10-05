@@ -1,0 +1,4 @@
+.root {
+  height: 100%;
+  composes: sans-serif from 'tachyons.css';
+}

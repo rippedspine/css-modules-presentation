@@ -1,0 +1,14 @@
+.common {
+  composes: pvxs phs br1 from 'tachyons.css';
+  display: inline-block;
+}
+
+.light {
+  composes: common;
+  composes: black-30 bg-white-80 from 'tachyons.css';
+}
+
+.dark {
+  composes: common;
+  composes: bg-black-30 white-80 from 'tachyons.css';
+}

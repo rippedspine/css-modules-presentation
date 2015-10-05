@@ -1,0 +1,16 @@
+.common {
+  composes: mvm f3 from 'tachyons.css';
+}
+
+.text {
+  composes: common;
+
+  blockquote {}
+  p {}
+}
+
+.code {
+  composes: common;
+  composes: tl from 'tachyons.css';
+  composes: card from 'styles/cards.css';
+}

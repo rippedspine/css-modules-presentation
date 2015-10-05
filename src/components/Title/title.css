@@ -1,0 +1,4 @@
+.root {
+  composes: mega semibold from 'tachyons.css';
+  composes: ts1 from 'styles/text-shadow.css';
+}
