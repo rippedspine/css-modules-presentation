@@ -1,0 +1,1 @@
+A __CSS Module__ is a CSS file in which all class names and <br> animation names are scoped locally by default.

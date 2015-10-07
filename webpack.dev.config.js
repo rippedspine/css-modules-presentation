@@ -29,6 +29,9 @@ module.exports = {
 
   module: {
     loaders: [{
+      test: /\.md$/,
+      loader: 'html!markdown'
+    }, {
       test: /\.js$/,
       loaders: ['react-hot', 'babel?optional[]=runtime'],
       include: path.join(__dirname, 'src')

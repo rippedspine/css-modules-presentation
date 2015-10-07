@@ -1,0 +1,13 @@
+.common {
+  composes: f5 mvm pvm tl from 'tachyons.css';
+  composes: card from 'styles/cards.css';
+}
+
+.text {
+  composes: common;
+}
+
+.code {
+  composes: common;
+  composes: code dark-blue from 'tachyons.css';
+}

@@ -1,5 +1,5 @@
-import React, { render } from 'react';
+import React, { render } from 'react'
 
-import App from 'containers/App'
+import Main from './Main';
 
-render(<App />, document.getElementById('root'));
+render(<Main />, document.getElementById('root'));

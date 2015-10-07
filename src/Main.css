@@ -1,0 +1,3 @@
+.root {
+  composes: sans-serif black-80 bg-lightest-blue from 'tachyons.css'; 
+}
