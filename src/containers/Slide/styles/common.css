@@ -1,0 +1,25 @@
+.outer {
+  composes: aco from 'align'; 
+}
+
+.title {
+  composes: mvl from 'tachyons-spacing/tachyons-spacing';
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
+  composes: f1 from 'tachyons-type-scale/tachyons-type-scale';
+  composes: bold from 'tachyons-font-weight/tachyons-font-weight';
+}
+
+.subtitle {
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
+  composes: f2 from 'tachyons-type-scale/tachyons-type-scale';
+  composes: normal from 'tachyons-font-weight/tachyons-font-weight';
+}
+
+.snippetDivider {
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
+
+  &:before {
+    content: '↓';
+    font-size: 4rem;
+  }
+}

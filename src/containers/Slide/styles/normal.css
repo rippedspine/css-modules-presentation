@@ -1,0 +1,15 @@
+.outer {
+  composes: outer from './common';
+}
+
+.title {
+  composes: title from './common';
+}
+
+.subtitle {
+  composes: subtitle from './common'; 
+}
+
+.snippetDivider {
+  composes: snippetDivider from './common';
+}

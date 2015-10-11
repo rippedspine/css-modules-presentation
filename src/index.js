@@ -1,5 +1,9 @@
-import React, { render } from 'react'
+import React from 'react'
+import { render } from 'react-dom'
 
-import Main from './Main';
+import 'normalize.css/normalize'
+import 'tachyons-base/tachyons-base'
 
-render(<Main />, document.getElementById('root'));
+import Main from 'containers/Main'
+
+render(<Main />, document.getElementById('root'))

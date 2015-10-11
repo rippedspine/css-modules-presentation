@@ -1,0 +1,13 @@
+.root {
+  composes: card from 'cards';
+  composes: mvxl from 'tachyons-spacing/tachyons-spacing';
+}
+
+.image {
+  max-width: 100%;
+  width: 30vw;
+}
+
+.description {
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
+}

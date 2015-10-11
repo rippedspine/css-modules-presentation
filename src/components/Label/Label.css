@@ -1,0 +1,15 @@
+.common {
+  composes: br1 from 'tachyons-border-radius/tachyons-border-radius';
+  composes: pvxs phs from 'tachyons-spacing/tachyons-spacing';
+  display: inline-block;
+}
+
+.light {
+  composes: common;
+  composes: bg-white-80 black-30 from 'tachyons-skins/tachyons-skins';
+}
+
+.dark {
+  composes: common;
+  composes: bg-black-40 white-90 from 'tachyons-skins/tachyons-skins';
+}

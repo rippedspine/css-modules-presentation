@@ -1,5 +1,0 @@
-.root {
-  composes: pbn ptl from 'tachyons.css';
-  width: 80%;
-  margin: auto;
-}

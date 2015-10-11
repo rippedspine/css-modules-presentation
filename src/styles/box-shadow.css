@@ -1,7 +1,7 @@
-.bs-inset1 {
-  box-shadow: inset 0 .125rem .125rem rgba(0,0,0,0.3);
+.bs1 {
+  box-shadow: 0 .125rem .125rem rgba(0,0,0,.3);
 }
 
-.bs1 {
-  box-shadow: 0 .125rem .125rem rgba(0,0,0,0.3);
+.bs1-inset {
+  box-shadow: inset 0 .125rem .125rem rgba(0,0,0,.3);
 }

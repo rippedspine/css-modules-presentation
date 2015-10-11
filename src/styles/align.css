@@ -1,0 +1,22 @@
+/*
+ * a = align
+ * c = center
+ * t = top
+ * b = bottom
+ * o = outer
+ * i = inner
+ */
+
+.aco {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ati {
+  align-self: flex-start;
+}
+
+.abi {
+  align-self: flex-end;
+}

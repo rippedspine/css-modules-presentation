@@ -1,0 +1,25 @@
+.outer {
+  composes: outer from './common';
+}
+
+.inner {
+  composes: inner from './common';
+  composes: dashedLight from 'borders';
+  composes: phxl ptm pbxl from 'tachyons-spacing/tachyons-spacing';
+}
+
+.title {
+  composes: title from './common';
+}
+
+.subtitle {
+  composes: subtitle from './common'; 
+}
+
+.content {
+  composes: content from './common';
+}
+
+.snippetDivider {
+  composes: snippetDivider from './common';
+}

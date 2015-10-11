@@ -1,0 +1,24 @@
+.root {
+  composes: mvm from 'tachyons-spacing/tachyons-spacing';    
+}
+
+.snippet {
+  composes: card from 'styles/cards';
+  composes: f5 from 'tachyons-type-scale/tachyons-type-scale';
+  composes: lh-copy from 'tachyons-line-height/tachyons-line-height';
+  composes: dark-blue from 'tachyons-skins/tachyons-skins';
+}
+
+.description {
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
+}
+
+.title {
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
+  composes: f2 from 'tachyons-type-scale/tachyons-type-scale';
+}
+
+.labels {
+  composes: mvm from 'tachyons-spacing/tachyons-spacing';
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
+}
