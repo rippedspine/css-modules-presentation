@@ -1,0 +1,6 @@
+.dashedLight {
+  composes: br2 from 'tachyons-border-radius/tachyons-border-radius';
+  composes: bw1 from 'tachyons-border-widths/tachyons-border-widths';
+  composes: b--white-50 from 'tachyons-border-colors/tachyons-border-colors';
+  border-style: dashed;
+}

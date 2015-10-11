@@ -1,0 +1,6 @@
+.card {
+  composes: bg-white-80 black-80 from 'tachyons-skins/tachyons-skins';
+  composes: br2 from 'tachyons-border-radius/tachyons-border-radius';
+  composes: phl pvs from 'tachyons-spacing/tachyons-spacing';
+  composes: bs1 from 'styles/box-shadow';
+}
