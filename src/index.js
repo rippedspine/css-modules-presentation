@@ -1,5 +1,9 @@
-import React, { render } from 'react'
+import React from 'react'
+import { render } from 'react-dom'
 
-import Main from './Main';
+import 'normalize.scss/normalize.scss'
+import 'globals.scss'
 
-render(<Main />, document.getElementById('root'));
+import Main from 'containers/Main'
+
+render(<Main />, document.getElementById('root'))
