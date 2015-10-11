@@ -16,6 +16,7 @@ module.exports = function(options) {
   };
 
   var modulesDirectories = ['src', 'src/libs', 'src/styles', 'node_modules'];
+  var extensions = ['', '.js', '.css', '.scss', '.md'];
 
   var localIdent = options.build ? '[hash:base64:5]' : '[name]_[local]_[hash:base64:5]';
   var scssLoader = 'css?modules&importLoaders=1&localIdent=' + localIdent + '!sass';
@@ -48,7 +49,7 @@ module.exports = function(options) {
     loaders: jsLoaders,
     include: path.join(__dirname, 'src')
   }, {
-    test: /\.scss$/,
+    test: /\.(scss|css)$/,
     loader: scssLoader
   }, {
     test: /\.html$/,
@@ -61,7 +62,10 @@ module.exports = function(options) {
     entry: entry,
     output: output,
     plugins: plugins,
-    resolve: { modulesDirectories: modulesDirectories },
+    resolve: { 
+      extensions: extensions,
+      modulesDirectories: modulesDirectories 
+    },
     module: { loaders: loaders }
   };
 };

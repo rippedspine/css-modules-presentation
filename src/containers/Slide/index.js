@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { Component } from 'react'
+
+import Snippet from 'containers/Snippet'
 
 const styles = {
   hero: require('./styles/hero.scss'),
@@ -6,12 +8,35 @@ const styles = {
   dashed: require('./styles/dashed.scss')
 }
 
-const Slide = ({ children, type = 'normal' }) => (
-  <div className={styles[type].outer}>
-    <div className={styles[type].inner}>
-      {children}
-    </div>
-  </div>
-)
+export default class Slide extends Component {
+  render() {
+    const { snippets, title, subtitle, content, type = 'normal' } = this.props
+    const snippetDivider = (<div className={styles[type].snippetDivider} />)
 
-export default Slide
+    return (
+      <div className={styles[type].outer}>
+        <div className={styles[type].inner}>
+          {title && (
+            <h1 className={styles[type].title}>{title}</h1>
+          )}
+
+          {subtitle && (
+            <h2 className={styles[type].subtitle}>{subtitle}</h2>
+          )}
+          
+          {content && (
+            <div 
+              className={styles[type].content} 
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          )}
+
+          {snippets && snippets.map((snippet, index) => {
+            const el = (<Snippet key={index} {...snippet} />)
+            return (index < snippets.length - 1) ? <div>{el}{snippetDivider}</div> : el
+          })}
+        </div>
+      </div>  
+    );  
+  }
+}

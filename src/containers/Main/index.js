@@ -5,29 +5,29 @@ import slides from 'slides'
 
 // Containers
 import Slide from 'containers/Slide'
-import Body from 'containers/Body'
-
-// Components
-import Title from 'components/Title'
 
 // Styles
 import styles from './Main.scss'
 
-const slideComponents = slides.map((slide, index) => {
-  const { type, title, content } = slide
-  return (
-    <Slide key={index} type={type}>
-      <Title type={type}>{title}</Title>
-      {content && <Body content={content} />}
-    </Slide>
-  )
-})
+export default class Main extends Component {
+  render() {
+    return (
+      <div className={styles.root}>
+        {slides.map((slide, index) => {
+          return <Slide key={index} {...slide} />
+        })}
+      </div>
+    )
+  }
+}
 
 // No hotreloading with stateless functional components yet...
-const Main = () => (
-  <div className={styles.root}>
-    {slideComponents}
-  </div>
-)
+// const Main = () => (
+//   <div className={styles.root}>
+//     {slides.map((slide, index) => {
+//       return <Slide key={index} {...slide} />
+//     })}
+//   </div>
+// )
 
-export default Main
+// export default Main

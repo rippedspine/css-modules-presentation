@@ -5,3 +5,23 @@
 .inner {
   
 }
+
+.title {
+  composes: bold from 'tachyons-font-weight/tachyons-font-weight.css';
+  composes: f1 from 'tachyons-type-scale/tachyons-type-scale.css';
+  composes: mvl from 'tachyons-spacing/tachyons-spacing.css';
+}
+
+.subtitle {
+  composes: f2 from 'tachyons-type-scale/tachyons-type-scale.css';
+  composes: normal from 'tachyons-font-weight/tachyons-font-weight.css';
+}
+
+.content {
+
+}
+
+.snippetDivider {
+  content: '↓';
+  font-size: 4rem;
+}

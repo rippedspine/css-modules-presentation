@@ -4,5 +4,23 @@
 }
 
 .inner {
-  
+  composes: inner from './common.scss';
+}
+
+.title {
+  composes: semibold from 'tachyons-font-weight/tachyons-font-weight.css';
+  composes: mega from 'tachyons-type-scale/tachyons-type-scale.css';
+  composes: ts1 from 'text-shadow.scss';
+}
+
+.subtitle {
+  composes: subtitle from './common.scss'; 
+}
+
+.content {
+  composes: content from './common.scss'; 
+}
+
+.snippetDivider {
+  composes: snippetDivider from './common.scss';
 }
