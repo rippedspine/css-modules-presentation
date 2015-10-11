@@ -1,4 +1,3 @@
-```
 import React from 'react'
 
 import styles from './MediaItem'
@@ -11,4 +10,3 @@ const MediaItem = ({ src, description }) => (
 )
 
 export default MediaItem
-```

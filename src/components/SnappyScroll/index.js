@@ -23,10 +23,6 @@ export default class SnappyScroll extends Component {
     super(props)
   }
 
-  static propTypes = {
-    children: PropTypes.arrayOf(PropTypes.element)
-  }
-
   componentDidMount() {
     total = this.props.children.length
     window.addEventListener('keyup', this.handleKeyUp)

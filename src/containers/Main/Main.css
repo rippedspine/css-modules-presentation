@@ -1,0 +1,8 @@
+.root {
+  composes: sans-serif from 'tachyons-font-family/tachyons-font-family';
+  composes: bg-lightest-blue from 'tachyons-skins/tachyons-skins';
+}
+
+.centerContent {
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
+}

@@ -1,11 +1,13 @@
-var webpack = require('webpack')
 var path = require('path')
+var webpack = require('webpack')
+
+// Plugins
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = function(options) {
   var debug = options.debug || false;
   var devtool = options.devtool || 'source-maps';
-  var plugins = options.plugins || [];
+  var plugins = [];
 
   var entry = ['./src/index'];
 
@@ -15,22 +17,22 @@ module.exports = function(options) {
     publicPath: '/static/'
   };
 
-  var modulesDirectories = ['src', 'src/libs', 'src/styles', 'node_modules'];
+  var modulesDirectories = ['src', 'src/styles', 'node_modules'];
   var extensions = ['', '.js', '.css', '.scss', '.md'];
 
-  var localIdent = options.build ? '[hash:base64:5]' : '[name]_[local]_[hash:base64:5]';
-  var scssLoader = 'css?modules&importLoaders=1&localIdent=' + localIdent + '!sass';
+  var localIdentName = options.build ? '[hash:base64:5]' : '[name]_[local]_[hash:base64:5]';
+  var cssLoader = 'css?modules&importLoaders=1&localIdentName=' + localIdentName + '!postcss';
 
   var jsLoaders = ['babel?optional[]=runtime'];
 
   if (options.build) {
-    scssLoader = ExtractTextPlugin.extract(scssLoader);
+    cssLoader = ExtractTextPlugin.extract(cssLoader);
     plugins.push(new ExtractTextPlugin('[name].css', { allChunks: true }));
   }
 
   if (options.hotComponents) {
     jsLoaders.unshift('react-hot');
-    scssLoader = 'style!' + scssLoader;
+    cssLoader = 'style!' + cssLoader;
     plugins.push(new webpack.HotModuleReplacementPlugin());
   }
 
@@ -49,11 +51,8 @@ module.exports = function(options) {
     loaders: jsLoaders,
     include: path.join(__dirname, 'src')
   }, {
-    test: /\.(scss|css)$/,
-    loader: scssLoader
-  }, {
-    test: /\.html$/,
-    loader: 'html'
+    test: /\.css$/,
+    loader: cssLoader
   }];
 
   return {
@@ -61,11 +60,14 @@ module.exports = function(options) {
     debug: debug,
     entry: entry,
     output: output,
-    plugins: plugins,
+    plugins: plugins.concat(options.plugins || []),
     resolve: { 
       extensions: extensions,
       modulesDirectories: modulesDirectories 
     },
-    module: { loaders: loaders }
+    module: { loaders: loaders },
+    postcss: function() {
+      return [require('precss'), require('autoprefixer')]
+    }
   };
 };

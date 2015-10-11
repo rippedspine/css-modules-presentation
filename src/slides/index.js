@@ -51,6 +51,7 @@ const slides = [{
   }]
 }, {
   title: 'Possible usecases',
+  type: 'hero',
   content: require('./content/usecases')
 }];
 

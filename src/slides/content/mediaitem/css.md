@@ -1,19 +1,18 @@
+```
 /* Compose from a file in project using a relative path. */
 .root {
-  composes: card from '../../styles/cards.css'; 
-  max-width: 20rem;
-  margin: auto;
-  padding: 2rem;
+  composes: card from '../../styles/cards';
 }
 
 /* Compose from file in directory added to moduleDirectories in webpack config. */
 .image {
-  composes: br1 from 'styles/border-radius.css';
-  width: 100%;
+  composes: br1 from 'border-radius.css';
+  max-width: 100%;
+  width: 30vw;
 }
 
 /* Compose from a node_module. */
 .description {
-  composes: mbn from 'tachyons/css/tachyons.css';
-  font-size: 1.5rem;
+  composes: tc from 'tachyons-text-align/tachyons-text-align';
 }
+```

@@ -1,21 +1,11 @@
 import React, { Component } from 'react'
 
-import styles from './Label.css'
+import styles from './Label'
 
-export default class Label extends Component {
-  constructor(props) {
-    super(props)
-  }
+const Label = ({ children, dark = true }) => (
+  <label className={dark ? styles.dark : styles.light}>
+    {children}
+  </label>
+)
 
-  static defaultProps = {
-    dark: true
-  }
-
-  render() {
-    return (
-      <label className={this.props.dark ? styles.dark : styles.light}>
-        {this.props.children}
-      </label>
-    )
-  }
-}
+export default Label

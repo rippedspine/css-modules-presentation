@@ -3,19 +3,27 @@ import React, { Component } from 'react'
 import Snippet from 'containers/Snippet'
 
 const styles = {
-  hero: require('./styles/hero.scss'),
-  normal: require('./styles/normal.scss'),
-  dashed: require('./styles/dashed.scss')
+  hero: require('./styles/hero'),
+  normal: require('./styles/normal'),
+  dashed: require('./styles/dashed')
 }
 
 export default class Slide extends Component {
   render() {
-    const { snippets, title, subtitle, content, type = 'normal' } = this.props
+    const { 
+      children,
+      snippets, 
+      title, 
+      subtitle, 
+      content, 
+      type = 'normal' 
+    } = this.props
+
     const snippetDivider = (<div className={styles[type].snippetDivider} />)
 
     return (
       <div className={styles[type].outer}>
-        <div className={styles[type].inner}>
+        <div>
           {title && (
             <h1 className={styles[type].title}>{title}</h1>
           )}
@@ -25,15 +33,20 @@ export default class Slide extends Component {
           )}
           
           {content && (
-            <div 
-              className={styles[type].content} 
-              dangerouslySetInnerHTML={{ __html: content }}
-            />
+            <div dangerouslySetInnerHTML={{ __html: content }} />
+          )}
+
+          {children && (
+            <div>{children}</div>
           )}
 
           {snippets && snippets.map((snippet, index) => {
-            const el = (<Snippet key={index} {...snippet} />)
-            return (index < snippets.length - 1) ? <div>{el}{snippetDivider}</div> : el
+            return (
+              <div key={index}>
+                <Snippet {...snippet} />
+                {(index < snippets.length - 1) && snippetDivider}
+              </div>
+            )
           })}
         </div>
       </div>  

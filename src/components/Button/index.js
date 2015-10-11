@@ -1,30 +1,24 @@
-import React, { Component, PropTypes } from 'react'
+import React, { Component } from 'react'
 
-import cn from 'css-modules-classnames'
-
-import styles from './Button.css'
+import styles from './Button'
 
 export default class Button extends Component {
-  static propTypes = {
-    children: PropTypes.string.isRequired,
-    error: PropTypes.bool,
-    disabled: PropTypes.bool,
-    inProgress: PropTypes.bool,
-    success: PropTypes.bool
-  }
-
   render() {
-    const { disabled, error, inProgress, success } = this.props;
+    const { children, type } = this.props;
 
     return (
-      <button disabled={disabled} className={cn(styles, {
-        normal: !(error || inProgress || success),
-        error: error,
-        inProgress: inProgress,
-        success: success
-      })} onClick={this.props.onClick}>
-        {this.props.children}
+      <button {...this.props} className={styles[type]}>
+        {children}
       </button>
     )
   }
 }
+
+// Can't use hot reload with stateless functional components yet...
+// const Button = ({ children, type = 'normal' }) => (
+//   <button {...this.props} className={styles[type]}>
+//     {children}
+//   </button>
+// )
+
+// export default Button

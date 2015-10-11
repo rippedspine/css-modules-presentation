@@ -1,0 +1,18 @@
+.outer {
+  composes: outer from './common';
+  height: 100vh;
+}
+
+.title {
+  composes: ts1 from 'text-shadow';
+  composes: mega from 'tachyons-type-scale/tachyons-type-scale.css';
+  composes: semibold from 'tachyons-font-weight/tachyons-font-weight.css';
+}
+
+.subtitle {
+  composes: subtitle from './common'; 
+}
+
+.snippetDivider {
+  composes: snippetDivider from './common';
+}
